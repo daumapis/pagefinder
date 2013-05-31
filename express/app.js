@@ -27,6 +27,8 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// Routes
+app.get('/oauth', routes.oauth);
 app.get('/', routes.index);
 app.get('/users', user.list);
 
