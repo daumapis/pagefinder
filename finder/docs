@@ -1,0 +1,8 @@
+evernote 저장
+sandbox.evernote.com 계정이 있어야함.
+
+1. GET method로 파라메터 넘겨서 이미지 먼저 저장
+http://localhost:3000/imgsave?url=http://book.daum-img.net/R72x100/KOR9788965700609
+
+2. 그 다음 GET method로 페이지 정보 EVERNOTE에 저장
+http://localhost:3000/save?title=[제목]&isbn=[isbn]&page=[페이지번호]&writer=[저작자]&monney=[가격]
