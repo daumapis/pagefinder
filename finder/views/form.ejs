@@ -1,25 +1,29 @@
  <% layout('layout') -%>
-
- <div class="row-fluid marketing">
-        <div class="span3">
-          <h4><%=title%></h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-
-        <div class="span3">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+<style>
+.colsHeight { height:200px!important;}
+@media only screen and (max-width: 480px) {
+	.colsHeight { height:100px!important; }
+}
+</style>
+ <div class="row-fluid ">
+	<div class="span2">
+	   <p><img src="<%=img%>" class="img-polaroid"></p>
+	</div>
+	
+	<div class="span10 hidden-phone">
+	  <h4><%=title%>-<%=author%></h4>
+	  <%=description%>
+	</div>
+  </div>
+  
+<div id="footer">
+      <div class="container">
+			<p class="muted credit" style="width:100%">Last Page : <input type="text" class="search-query" style="width:3em" value="<%=lastPage%>"> </p>
+			<p class="muted credit" style="width:100%">Comment : <textarea rows="" cols="5" class="colsHeight" style="width:93%" ></textarea> </p>
       </div>
+</div>
+
+<p>
+<%var temp = new Date()%>
+<%=temp.getFullYear()%>.<%=temp.getMonth()+1%>.<%=temp.getDate()%> / <%=temp.getHours()%>:<%=temp.getMinutes()%>
+</p>

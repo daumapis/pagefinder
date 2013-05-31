@@ -5,7 +5,6 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , note = require('./routes/note')
   , editor = require('./routes/editor')
   , bookdetail = require('./routes/bookdetail')
@@ -40,13 +39,14 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/users', user.list);
 app.get('/oauth', routes.oauth);
 app.get('/oauth_callback', routes.oauth_callback);
 app.get('/clear', routes.clear);
+app.get('/imgsave', routes.imgsave);
 app.get('/save', routes.save);
 app.get('/editor', editor.form);
 app.get('/detail', bookdetail.view);
+app.get('/note', note.note);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
