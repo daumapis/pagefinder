@@ -4,6 +4,7 @@ ObjectGlobal.isPageNo = ObjectGlobal.isPageNo || 1;
 ObjectGlobal.totalCount = ObjectGlobal.totalCount || 0;
 ObjectGlobal.currentCount = ObjectGlobal.currentCount || 0;
 ObjectGlobal.currentPage = ObjectGlobal.currentPage || 0;
+ObjectGlobal.isResultDownload = false
 
 var tmp;
 
@@ -18,6 +19,7 @@ var daumSearch = function(title, pageno, callback, isSearch){
 	}).done(function( data ) {
 		if( console && console.log) 
 			console.log(data);
+		ObjectGlobal.isResultDownload = false;
 		callback(data, isSearch);
 	});
 }
@@ -75,8 +77,13 @@ var appendBook = function(data, isSearch){
 
 var nextList = function(){
 
-	if( ObjectGlobal.currentCount < ObjectGlobal.totalCount && ObjectGlobal.currentPage > ObjectGlobal.currentCount - 2){
+	var active = $("#myCarousel").find('.item.active');
+	active.parent().children()
+	var items = active.parent().children()
+	var index = items.index(active)
 
+	if( ObjectGlobal.totalCount !== ObjectGlobal.currentCount && items.length - 2 <= index && ObjectGlobal.isResultDownload === false ){
+		ObjectGlobal.isResultDownload = true
 		daumSearch($("#id_search_input").val(), ++ObjectGlobal.isPageNo, appendBook, false)
 	}
 }
