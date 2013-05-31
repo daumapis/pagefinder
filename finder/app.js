@@ -8,6 +8,7 @@ var express = require('express')
   , note = require('./routes/note')
   , editor = require('./routes/editor')
   , bookdetail = require('./routes/bookdetail')
+  , search = require('./routes/search')
   , http = require('http')
   , path = require('path')
   , engine = require('ejs-locals');
@@ -47,6 +48,7 @@ app.get('/save', routes.save);
 app.get('/editor', editor.form);
 app.get('/detail', bookdetail.view);
 app.get('/note', note.notelist);
+app.get('/search', search.booksearch)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
