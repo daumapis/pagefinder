@@ -209,7 +209,7 @@ exports.oauth_callback = function(req, res) {
       if(error) {
         console.log('error');
         console.log(error);
-        res.redirect('/error');
+        res.redirect('/');
       } else {
         // store the access token in the session
         req.session.oauthAccessToken = oauthAccessToken;
