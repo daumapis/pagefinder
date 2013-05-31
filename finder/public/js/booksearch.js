@@ -54,7 +54,7 @@ var appendBook = function(data, isSearch){
 					activeCheck = true;
 				}
 				tmpHtml += "\">";
-				tmpHtml += "<a href=\"#\">"
+				tmpHtml += "<a href=\"#\" onclick=\"detailList()\">"
 				tmpHtml += "<img src=\""
 				tmpHtml += item[i].cover_l_url.length === 0 ? "/img/empty_book.png" : item[i].cover_l_url;
 				tmpHtml += "\"></a>"
@@ -103,8 +103,23 @@ var detailList = function(){
 
 	var data = ObjectGlobal.isData[index]
 
+	$("#id_bookInfo").empty()
 	$("#myCarousel").attr("style", "display:none;")
+	$("#id_bookInfo").attr("style", "")
+	$("#id_bookInfo").append("<h1>" + "제목 : " + data.title + "</h1>");
+	$("#id_bookInfo").append("<h3>" + "저자 : " + data.author + "</h3>");
+	$("#id_bookInfo").append("<h3>" + "ISBN : " + data.isbn + "</h3>");
+	$("#id_bookInfo").append("<h3>" + "가격 : " + data.list_price + "</h3>");
+	$("#id_bookInfo").append("<img src=\"" + data.cover_l_url + "\" />");
+	$("#id_bookInfo").append('<button type="submit" class="btn">Evernote</button>');
+	$("#id_bookInfo").append('<button type="cancel" class="btn" onclick="backList()">뒤로가기</button>');
 
+	// $("#id_bookInfo").append("<h3>" + "제목 : " + data.title + "</h1>");
+}
+
+var backList = function(){
+	$("#myCarousel").attr("style", "")
+	$("#id_bookInfo").attr("style", "display:none;")
 }
 
 $("#id_search").submit(function(){
