@@ -53,7 +53,7 @@ var appendBook = function(data, isSearch){
 				tmpHtml += "\">";
 				tmpHtml += "<a href=\"#\">"
 				tmpHtml += "<img src=\""
-				tmpHtml += item[i].cover_l_url.length === 0 ? "img/empty_book.png" : item[i].cover_l_url;
+				tmpHtml += item[i].cover_l_url.length === 0 ? "/img/empty_book.png" : item[i].cover_l_url;
 				tmpHtml += "\"></a>"
 				tmpHtml += "</div>";
 				console.log(tmpHtml)
