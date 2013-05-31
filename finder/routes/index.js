@@ -18,7 +18,6 @@ exports.index = function(req, res){
     note_store.listNotebooks(token, function(notebooks){
       req.session.notebooks = notebooks;
       res.render('index', { token: token });
-
     });
   } else {
     res.render('index');
@@ -103,10 +102,6 @@ var notebooks = noteStore.listNotebooks(function(notebooks) {
     console.log("  * " + notebooks[i].name);
   }
 });
-
-
-
-
 
 
 // To create a new note, simply create a new Note object and fill in
@@ -214,7 +209,7 @@ exports.oauth_callback = function(req, res) {
       if(error) {
         console.log('error');
         console.log(error);
-        res.redirect('/');
+        res.redirect('/error');
       } else {
         // store the access token in the session
         req.session.oauthAccessToken = oauthAccessToken;
@@ -224,7 +219,7 @@ exports.oauth_callback = function(req, res) {
         req.session.edamExpires = results.edam_expires;
         req.session.edamNoteStoreUrl = results.edam_noteStoreUrl;
         req.session.edamWebApiUrlPrefix = results.edam_webApiUrlPrefix;
-        res.redirect('/');
+        res.redirect('/note');
       }
     });
 };
