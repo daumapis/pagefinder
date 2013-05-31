@@ -17,7 +17,7 @@ exports.index = function(req, res){
     var note_store = client.getNoteStore();
     note_store.listNotebooks(token, function(notebooks){
       req.session.notebooks = notebooks;
-      res.render('index', { token: token });
+      res.render('note', { token: token });
     });
   } else {
     res.render('index');
