@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , note = require('./routes/note')
+  , editor = require('./routes/editor')
   , http = require('http')
   , path = require('path')
   , engine = require('ejs-locals');
@@ -42,6 +43,7 @@ app.get('/users', user.list);
 app.get('/oauth', routes.oauth);
 app.get('/oauth_callback', routes.oauth_callback);
 app.get('/clear', routes.clear);
+app.get('/editor', editor.form);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
