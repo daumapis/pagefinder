@@ -10,6 +10,7 @@
     "ejs": "*",
     "stylus": "*",
     "evernote": "*",
-	"ejs-locals": "*"
+	"ejs-locals": "*",
+    "request": "*"
   }
 }
