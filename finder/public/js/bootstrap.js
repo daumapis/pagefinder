@@ -293,13 +293,13 @@
     this.options = options
     this.options.pause == 'hover' && this.$element
       .on('mouseenter', $.proxy(this.pause, this))
-      .on('mouseleave', $.proxy(this.cycle, this))
+      .on('mouseleave', $.proxy(this.pause, this))
   }
 
   Carousel.prototype = {
 
     cycle: function (e) {
-      if (!e) this.paused = false
+      if (!e) this.paused = true
       if (this.interval) clearInterval(this.interval);
       this.options.interval
         && !this.paused
