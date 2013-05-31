@@ -5,6 +5,8 @@ ObjectGlobal.totalCount = ObjectGlobal.totalCount || 0;
 ObjectGlobal.currentCount = ObjectGlobal.currentCount || 0;
 ObjectGlobal.currentPage = ObjectGlobal.currentPage || 0;
 ObjectGlobal.isResultDownload = false
+ObjectGlobal.isData = []
+
 
 var tmp;
 
@@ -34,6 +36,7 @@ var appendBook = function(data, isSearch){
 		$("#myCarousel").append('<div class="carousel-inner"></div>')
 		ObjectGlobal.totalCount = data.channel.totalCount;
 		ObjectGlobal.currentCount = 0;
+		ObjectGlobal.isData = []
 	}
 
 	if( typeof data === "undefined" || typeof data.channel === "undefined" || typeof data.channel.item === "undefined"){
@@ -57,6 +60,8 @@ var appendBook = function(data, isSearch){
 				tmpHtml += "\"></a>"
 				tmpHtml += "</div>";
 				console.log(tmpHtml)
+
+				ObjectGlobal.isData.push(item[i])
 				
 				$("#myCarousel div.carousel-inner").append(tmpHtml)
 			}
@@ -67,6 +72,8 @@ var appendBook = function(data, isSearch){
 				$("#myCarousel").append(text2);
 			}
 			ObjectGlobal.currentCount += item.length;
+
+
 
 		} else {
 			alert("데이터가 없습니다.");
@@ -86,6 +93,18 @@ var nextList = function(){
 		ObjectGlobal.isResultDownload = true
 		daumSearch($("#id_search_input").val(), ++ObjectGlobal.isPageNo, appendBook, false)
 	}
+}
+
+var detailList = function(){
+	var active = $("#myCarousel").find('.item.active');
+	active.parent().children()
+	var items = active.parent().children()
+	var index = items.index(active)
+
+	var data = ObjectGlobal.isData[index]
+
+	$("#myCarousel").attr("style", "display:none;")
+
 }
 
 $("#id_search").submit(function(){
