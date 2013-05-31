@@ -8,7 +8,21 @@ var config = require('../config.json');
 var callbackUrl = "http://localhost:3000/oauth_callback";
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  if(req.session.oauthAccessToken) {
+    var token = req.session.oauthAccessToken;
+    var client = new Evernote.Client({
+      token: token,
+      sandbox: config.SANDBOX
+    });
+    var note_store = client.getNoteStore();
+    note_store.listNotebooks(token, function(notebooks){
+      req.session.notebooks = notebooks;
+      res.render('index', { token: token });
+
+    });
+  } else {
+    res.render('index');
+  }
 };
 
 exports.save = function(req, res){
