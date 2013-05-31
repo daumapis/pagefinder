@@ -1,8 +1,8 @@
 <% layout('layout') -%>
 <% booklist = [{title:"testName1"},{title:"testName2"}]%>
 
-<% for(var i=0;note.length>i;i++){ %>
+<% for(var i=0;booklist.length>i;i++){ %>
 	<li>
-		<%=note[i]%> 
+		<%=booklist[i].title%> 
 	</li>
 <%}%>

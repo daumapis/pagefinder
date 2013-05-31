@@ -48,7 +48,18 @@ app.get('/save', routes.save);
 app.get('/editor', editor.form);
 app.get('/detail', bookdetail.view);
 app.get('/note', note.notelist);
-app.get('/search', search.booksearch)
+app.get('/search', search.booksearch);
+app.post('/addbook', function(req, res){
+  var title = req.body.title;
+  var author = req.body.author;
+  var isbn = req.body.isbn;
+  var price = req.body.price;
+  console.log(title);
+  console.log(author);
+  console.log(isbn);
+  console.log(price);
+  // res.send(json_parsed.object);
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

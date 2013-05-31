@@ -33,20 +33,28 @@ exports.notelist = function(req, res){
     		notebook.name = keyword;
 				notestore.createNotebook(notebook, function(createdNotebook) {
   					console.log(createdNotebook)
-  					res.render('note', { note : notebook.name});
+  					res.render('note', { note : "책 "});
 				});
     	}else{
     		var notebook = new Evernote.Notebook();
-			notestore.getNote(token, temp.guid, true, true, true, true, function(note)
+
+    		var filter = new Evernote.NoteFilter();
+			filter.ascending = true;
+			filter.notebookGuid = temp.guid;
+    		console.log(temp.guid)
+    		var rspec = new Evernote.NotesMetadataResultSpec();
+			rspec.includeTitle = true;
+			rspec.includeNotebookGuid = true;
+			notestore.findNotes(token, filter, 0, 100, rspec, function(note)
 			{
 				console.log(note);
-				res.render('booklist', note);
+				if (note.notes.length != 0) {
+					res.render('booklist', note.notes);	
+				}else{
+					res.render('note', { note : "책 "});	
+				};				
 			})
-    		
     	};
-      req.session.notebooks = notebooks;
-
-      
     });
     //  function(notebooks){
     //   req.session.notebooks = notebooks;
