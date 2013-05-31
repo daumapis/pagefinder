@@ -8,7 +8,8 @@ var express = require('express')
   , user = require('./routes/user')
   , note = require('./routes/note')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , engine = require('ejs-locals');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.configure(function(){
     res.locals.session = req.session;
     next();
   });
+  app.engine('ejs', engine);
 });
 
 app.configure('development', function(){
