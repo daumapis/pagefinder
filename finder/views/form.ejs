@@ -6,7 +6,7 @@
 }
 </style>
  <div class="row-fluid ">
-	<div class="span2">
+	<div class="span2" style="text-align: center;" >
 	   <p><img src="<%=img%>" class="img-polaroid"></p>
 	</div>
 	
@@ -15,15 +15,20 @@
 	  <%=description%>
 	</div>
   </div>
-  
-<div id="footer">
-      <div class="container">
-			<p class="muted credit" style="width:100%">Last Page : <input type="text" class="search-query" style="width:3em" value="<%=lastPage%>"> </p>
-			<p class="muted credit" style="width:100%">Comment : <textarea rows="" cols="5" class="colsHeight" style="width:93%" ></textarea> </p>
-      </div>
+
+<div class="container">
+	<p class="muted credit" style="width:100%;text-align:justify;">Last Page : <input type="text" class="search-query" style="width:3em" value="<%=lastPage%>"> </p>
+	<p class="muted credit" style="width:100%">Comment : <textarea rows="" cols="5" class="colsHeight" style="width:98%" ></textarea> </p>
 </div>
 
-<p>
-<%var temp = new Date()%>
-<%=temp.getFullYear()%>.<%=temp.getMonth()+1%>.<%=temp.getDate()%> / <%=temp.getHours()%>:<%=temp.getMinutes()%>
+
+<p style="text-align:right;margin-right: 1em;">
+<button type="button" style="width:4em" class="btn btn-primary">Save</button>
 </p>
+
+<p style="text-align:right;margin-right: 1em;">
+<%var temp = new Date()%>
+<%=temp.getFullYear()%>.<%=temp.getMonth()+1%>.<%=temp.getDate()%> / <%if(temp.getHours()<10){%>0<%}%><%=temp.getHours()%>:<%if(temp.getMinutes()<10){%>0<%}%><%=temp.getMinutes()%>
+</p>
+
+
