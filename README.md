@@ -2,10 +2,9 @@
 
 Node.js 기반 책갈피 서비스입니다.
 
-node-module 
+node-module 설치방법 
 
-Evernote : npm install evernote
-
+- npm install
 
 
 
