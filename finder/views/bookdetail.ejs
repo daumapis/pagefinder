@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+    .layout_first{
+      margin-left:10%;
+      margin-right: 10%;
+    }
+      .img_area{
+            width:100%;
+      }
+
+      .table_area{
+            width : 100%;
+      }
+
+      .crop_img{
+            width : 100px;
+            height : 80px;
+      }
+
+</style>
+<script  type="text/javascript">
+
+window.onload = function(){
+
+console.log("asdf");
+
+                       document.getElementById('append_button').addEventListener('click',appendDomTable);
+
+};
+
+function appendDomTable(){
+  var eTable = document.createElement("table");
+  eTable.border = "1";
+        var eRow = document.createElement("tr");
+     
+                var eCeil1 = document.createElement("th");
+                //var eText1= document.createTextNode("그림");
+                var eSrc = document.createElement("img");
+                eSrc.className = "crop_img";
+                eSrc.src = $(".img_area").attr("src");
+                eCeil1.appendChild(eSrc);
+                eRow.appendChild(eCeil1);
+
+                var eCeil2 = document.createElement("th");
+                var eText2 = document.createTextNode($(".span6").text());
+                
+                eCeil2.appendChild(eText2);
+                eRow.appendChild(eCeil2);
+        
+       // var eHr = document.createElement("hr");
+        eTable.appendChild(eRow);
+       document.getElementById("layout_f").appendChild(eTable);
+      // document.getElementById("layout_f").appendChild(eHr);
+}
+
+
+     
+</script>
+  </head>
+  <body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+<hr>
+<div id="layout_f" class="layout_first">
+  <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12"><h1>Embeddedjs 삽질하기</h1>
+          <div class="row-fluid">
+            <div class="span2">
+              <img class="img_area" src="http://icon.daumcdn.net/w/c/13/05/27843067993700703.jpeg">
+            </div>
+            <div class="span6">혜성과 같은 속도록 페이지를 만들게 됩니다.</div>
+          </div>
+        </div>
+</div>
+</div>
+
+
+<hr>
+
+<button id="append_button" class="btn btn-large btn-success">"눌러"</button>
+
+<hr>
+
+
+
+  </body>
+</html>
+
+
