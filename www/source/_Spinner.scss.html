@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-field-Spinner'>/**
+</span> * @class Ext.field.Spinner
+ */
+
+.x-spinner {
+    .x-field-input {
+        .x-input-el {
+            -webkit-text-fill-color: #000;
+        }
+    }
+
+    &amp;.x-item-disabled {
+        .x-input-el {
+            -webkit-text-fill-color: #B3B3B3;
+        }
+
+        .x-spinner-button {
+            @include toolbar-button(lighten($form-light, 10), matte);
+            color: #aaa !important;
+        }
+    }
+    
+    .x-spinner-button {
+        margin-top: .25em;
+        margin-bottom: .25em;
+        width: 2em;
+        padding: .23em 0 .27em;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid $form-light !important;
+        @include border-radius(1em);
+        @include toolbar-button(lighten($form-light, 5), matte);
+    }
+
+    .x-spinner-button-down {
+        margin-left: .25em;
+    }
+    .x-spinner-button-up {
+        margin-right: .25em;
+    }
+
+    &amp;.x-field-grouped-buttons {
+        .x-spinner-button-down {
+            margin-right: .5em;
+        }
+    }
+}
+
+.x-android {
+    .x-spinner-button {
+        padding: .40em 0 .11em !important;
+    }
+}
+
+.x-ie .x-spinner .x-field-input .x-input-el:disabled {
+  color: #000;
+}</pre>
+</body>
+</html>

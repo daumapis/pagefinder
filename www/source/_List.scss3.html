@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-dataview-List'>/**
+</span> * @class Ext.dataview.List
+ */
+
+<span id='Ext-dataview-List-css_var-S-list-color'>/**
+</span> * @var {color} $list-color
+ * Text color for list rows.
+ */
+$list-color: #000 !default;
+
+<span id='Ext-dataview-List-css_var-S-list-bg-color'>/**
+</span> * @var {color} $list-bg-color
+ * Background-color for list rows.
+ */
+$list-bg-color: #f7f7f7 !default;
+
+<span id='Ext-dataview-List-css_var-S-include-list-highlights'>/**
+</span> * @var {color} $include-list-highlights
+ * Optionally disable all list gradients, text-shadows, and box-shadows. Useful for CSS debugging,
+ * non-performant browsers, or minimalist designs.
+ */
+$include-list-highlights: $include-highlights !default;
+
+<span id='Ext-dataview-List-css_var-S-list-zebrastripe'>/**
+</span> * @var {boolean} $list-zebrastripe
+ * Optionally zebra-stripe the list (alternating background colors).
+ */
+$list-zebrastripe: false !default;
+
+<span id='Ext-dataview-List-css_var-S-list-pressed-color'>/**
+</span> * @var {color} $list-pressed-color
+ * Background-color for pressed list rows.
+ */
+$list-pressed-color: lighten($active-color, 50%) !default;
+
+<span id='Ext-dataview-List-css_var-S-list-active-color'>/**
+</span> * @var {color} $list-active-color
+ * Background-color for selected list rows.
+ */
+$list-active-color: $active-color !default;
+
+<span id='Ext-dataview-List-css_var-S-list-active-gradient'>/**
+</span> * @var {string} $list-active-gradient
+ * Gradient style for selected list rows.
+ */
+$list-active-gradient: $base-gradient !default;
+
+<span id='Ext-dataview-List-css_var-S-list-header-bg-color'>/**
+</span> * @var {color} $list-header-bg-color
+ * Background-color for list header rows (in grouped lists).
+ */
+$list-header-bg-color: lighten(saturate($base-color, 10%), 20%) !default;
+
+<span id='Ext-dataview-List-css_var-S-list-header-gradient'>/**
+</span> * @var {string} $list-header-gradient
+ * Gradient style for list header rows (in grouped lists).
+ */
+$list-header-gradient: $base-gradient !default;
+
+<span id='Ext-dataview-List-css_var-S-list-disclosure-size'>/**
+</span> * @var {measurement} $list-disclosure-size
+ * Default size (width/height) for disclosure icons.
+ */
+$list-disclosure-size: 32px;
+
+<span id='Ext-dataview-List-css_var-S-list-disclosure-round-size'>/**
+</span> * @var {measurement} $list-disclosure-round-size
+ * Default size (width/height) for disclosure icons in a list with a `round` ui.
+ */
+$list-disclosure-round-size: 1.5em;
+
+<span id='Ext-dataview-List-css_var-S-list-round-padding'>/**
+</span> * @var {measurement} $list-round-padding
+ * Default padding for lists with a `round` ui.
+ */
+$list-round-padding: 13px !default;
+
+<span id='Ext-dataview-List-css_var-S-list-rounded-radius'>/**
+</span> * @var {measurement} $list-rounded-radius
+ * Default border-radius for items in rounded list
+ */
+$list-rounded-radius: .4em !default;
+</pre>
+</body>
+</html>

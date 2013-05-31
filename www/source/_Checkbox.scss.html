@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-field-Checkbox'>/**
+</span> * @class Ext.field.Checkbox
+ */
+
+@mixin checkmark($color: #000){
+    @extend .x-checkmark-base;
+    color: $color;
+}
+
+.x-checkmark-base {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    content: '3';
+    font-family: 'Pictos';
+    font-size: 1.6em;
+    text-align: right;
+    line-height: 1.6em;
+}
+
+.x-field-checkbox .x-field-mask,
+.x-field-radio .x-field-mask {
+    &amp;::after {
+        @include checkmark($form-light);
+    }
+}
+
+.x-input-checkbox,
+.x-input-radio {
+    visibility: hidden;
+}
+
+.x-input-el:checked + .x-field-mask::after {
+    color: $active-color;
+}
+
+.x-item-disabled {
+    &amp;.x-field-checkbox {
+        .x-input-checkbox:checked + .x-field-mask::after {
+            color: mix($form-light, $active-color, 60);
+        }
+    }
+}
+</pre>
+</body>
+</html>

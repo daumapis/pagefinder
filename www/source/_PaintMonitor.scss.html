@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-util-PaintMonitor'>/**
+</span> * @class Ext.util.PaintMonitor
+ */
+
+@-webkit-keyframes x-paint-monitor-helper {
+    from {
+        zoom: 1
+    }
+    to {
+        zoom: 1
+    }
+}
+
+@keyframes x-paint-monitor-helper {
+    from {
+        zoom: 1
+    }
+    to {
+        zoom: 1
+    }
+}
+
+.x-paint-monitored {
+    position: relative;
+}
+
+.x-paint-monitor {
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden;
+
+    &amp;.cssanimation {
+        -webkit-animation-duration: 0.0001ms;
+        -webkit-animation-name: x-paint-monitor-helper;
+        animation-duration: 0.0001ms;
+        animation-name: x-paint-monitor-helper;
+    }
+
+    &amp;.overflowchange {
+        overflow: hidden;
+
+        &amp;::after {
+            content: '';
+            display: block;
+            width: 1px !important;
+            height: 1px !important;
+        }
+    }
+}</pre>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-layout-Float'>/**
+</span> * @class Ext.layout.Float
+ */
+
+.x-center,
+.x-centered {
+    @include absolute-position();
+    @include st-box();
+    @include st-box-align(center);
+    @include st-box-pack(center);
+
+    &gt; * {
+        position: relative;
+    }
+
+    &gt; .x-floating {
+        position: relative !important;
+    }
+}
+
+.x-floating {
+    position: absolute !important;
+}
+
+.x-layout-float {
+    overflow: hidden;
+
+    &gt; .x-layout-float-item {
+        float: left;
+    }
+
+    &amp;.x-direction-right {
+        &gt; .x-layout-float-item {
+            float: right;
+        }
+    }
+}</pre>
+</body>
+</html>

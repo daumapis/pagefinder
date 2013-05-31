@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-layout-Dock'>/**
+</span> * @class Ext.layout.Dock
+ */
+
+.x-dock {
+    @include st-box();
+
+    &gt; .x-dock-body {
+        overflow: hidden;
+    }
+
+    &amp;.x-sized, &amp;.x-sized &gt; .x-dock-body &gt; *,
+    &amp;.x-sized &gt; .x-dock-body &gt; .x-body &gt; .x-inner {
+        @include absolute-fit();
+    }
+
+    &amp;.x-sized &gt; .x-dock-body {
+        position: relative;
+        @include st-box();
+        @include st-box-flex(1);
+        min-height: 0;
+        min-width: 0;
+    }
+
+    &amp;.x-unsized,
+    &amp;.x-stretched {
+        height: 100%;
+        
+        &gt; .x-dock-body {
+            position: relative;
+            @include st-box();
+            @include st-box-flex(1);
+            @include st-box-orient(vertical);
+            min-height: 0;
+            min-width: 0;
+
+            &gt; * {
+                @include st-box-flex(1);
+                min-height: 0;
+                min-width: 0;
+            }
+        }
+    }
+
+    &amp;.x-dock-vertical {
+        @include st-box-orient(vertical);
+    }
+
+    &amp;.x-dock-horizontal {
+        @include st-box-orient(horizontal, important);
+
+        &gt; .x-dock-item {
+            @include st-box();
+
+            &amp;.x-sized {
+                &gt; .x-inner, &gt; .x-body {
+                    @include absolute-fit();
+                }
+            }
+
+            &amp;.x-unsized {
+                @include st-box-orient(vertical);
+
+                &gt; * {
+                    @include st-box-flex(1);
+                    min-height: 0;
+                    min-width: 0;
+                }
+            }
+        }
+    }
+}
+
+// Platform specific code
+
+.x-ie {
+    .x-stretched {
+        &amp;.x-dock-horizontal {
+            &gt; .x-dock-body {
+                width: 0;
+            }
+        }
+
+        &amp;.x-dock-vertical {
+            &gt; .x-dock-body {
+                height: 0;
+            }
+        }
+    }
+
+    .x-has-width &gt; .x-dock.x-unsized.x-dock-horizontal {
+        &gt; .x-dock-body {
+            width: 0;
+        }
+    }
+
+    .x-has-height &gt; .x-dock.x-unsized.x-dock-vertical {
+        &gt; .x-dock-body {
+            height: 0;
+        }
+    }
+}</pre>
+</body>
+</html>

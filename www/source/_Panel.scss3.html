@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-tab-Panel'>/**
+</span> * @class Ext.tab.Panel
+ */
+
+.x-tab {
+    z-index: 1;
+    overflow: visible !important;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+.x-tabbar {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0;
+    background-color: #eee;
+}
+
+.x-tabbar.x-docked-top {
+    border-bottom-width: 1px;
+
+    .x-tab .x-button-icon {
+        position: relative;
+
+        &amp;.x-shown {
+            display: inline-block;
+        }
+
+        &amp;.x-hidden {
+            display: none;
+        }
+    }
+}
+
+.x-tabbar.x-docked-bottom {
+    border-top-width: 1px;
+
+    .x-tab .x-button-icon {
+        display: block;
+        position: relative;
+
+        &amp;.x-shown {
+            visibility: visible;
+        }
+
+        &amp;.x-hidden {
+            visibility: hidden;
+        }
+    }
+}
+
+.x-tab {
+    position: relative;
+    min-width : 3.3em;
+}
+</pre>
+</body>
+</html>

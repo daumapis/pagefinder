@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-Panel'>/**
+</span> * @class Ext.Panel
+ */
+
+.x-panel,
+.x-msgbox {
+    position: relative;
+}
+
+.x-panel.x-floating,
+.x-msgbox,
+.x-form.x-floating {
+    padding: 6px;
+    background-color: #ccc;
+
+    .x-panel-inner,
+    &gt; .x-body {
+        z-index: 1;
+        background-color: #fff;
+    }
+}
+
+.x-panel.x-floating &gt; .x-dock,
+.x-msgbox &gt; .x-dock,
+.x-form.x-floating &gt; .x-dock {
+    z-index: 1;
+}
+
+.x-panel.x-floating &gt; .x-dock.x-sized,
+.x-msgbox &gt; .x-dock.x-sized,
+.x-form.x-floating &gt; .x-dock.x-sized {
+    margin: 6px;
+}</pre>
+</body>
+</html>

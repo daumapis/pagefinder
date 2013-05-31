@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-field-Radio'>/**
+</span> * @class Ext.field.Radio
+ */
+
+@mixin radiomark($color: #000, $size: 20px) {
+    @include insertion($size, $size, ($size * -.5) + 24, auto);
+    right: ($size * -.5) + 24;
+    background-color: $color;
+    @include border-radius($size);
+}
+
+.x-field-radio .x-field-mask {
+    @include absolute-position;
+
+    &amp;::after {
+        @include radiomark(darken($form-light, 5), 16px);
+    }
+
+    &amp;::before {
+        @include radiomark($form-light, 26px);
+    }
+}
+
+.x-input-radio:checked + .x-field-mask::after {
+    background: $active-color;
+}
+
+.x-item-disabled {
+    &amp;.x-field-radio {
+        .x-input-radio:checked + .x-field-mask::after {
+            background: mix($form-light, $active-color, 60);
+        }
+    }
+}
+
+</pre>
+</body>
+</html>

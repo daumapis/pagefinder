@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-Toolbar'>/**
+</span> * @class Ext.Toolbar
+ */
+
+.x-toolbar {
+    position: relative;
+    background-color: #eee;
+    min-height: 2.6em;
+
+    &amp;.x-docked-top {
+        border-bottom: 1px solid;
+    }
+
+    &amp;.x-docked-bottom {
+        border-top: 1px solid;
+    }
+
+    &amp;.x-docked-left {
+        width: 50px;
+        height: auto;
+        border-right: 1px solid;
+    }
+
+    &amp;.x-docked-right {
+        width: 50px;
+        height: auto;
+        border-left: 1px solid;
+    }
+}
+
+.x-title {
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+
+    max-width: 100%;
+
+    .x-innerhtml {
+        @include ellipsis;
+    }
+}
+
+.x-navigation-bar {
+    .x-container {
+        overflow: visible;
+    }
+}
+
+.x-toolbar-inner {
+    .x-field {
+        .x-component-outer {
+            @include st-box-flex(1);
+        }
+    }
+}
+
+.x-ie .x-toolbar-inner {
+    height: 100% !important;
+}</pre>
+</body>
+</html>

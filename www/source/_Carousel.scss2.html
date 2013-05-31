@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-carousel-Carousel'>/**
+</span> * @class Ext.carousel.Carousel
+ */
+
+// Private variables
+$indicator-light: rgba(#fff, .1);
+$indicator-light-active: rgba(#fff, .3);
+$indicator-dark: rgba(#000, .1);
+$indicator-dark-active: rgba(#000, .3);
+
+<span id='Ext-carousel-Carousel-css_mixin-sencha-carousel-indicator-ui'>/**
+</span> * Creates a theme UI for carousel indicator components.
+ *
+ * @param {string} $ui-label The name of the UI being created.
+ *   Can not included spaces or special punctuation (used in class names)
+ * @param {color} $color Base color for the UI.
+ * @param {string} $gradient Default gradient for the UI.
+ * @param {color} $active-color Active color for the UI.
+ * @param {string} $active-gradient Active gradient for the UI.
+ */
+@mixin sencha-carousel-indicator-ui($ui-label, $color, $gradient, $active-color, $active-gradient) {
+    .x-carousel-indicator-#{$ui-label} span {
+        @include background-gradient($color, $gradient);
+
+        &amp;.x-carousel-indicator-active {
+            @include background-gradient($active-color, $active-gradient)
+        }
+    }
+}
+
+.x-carousel-indicator {
+    span {
+        width: $carousel-indicator-size;
+        height: $carousel-indicator-size;
+        @if $include-border-radius {
+            @include border-radius($carousel-indicator-size / 2);
+        }
+        margin: $carousel-indicator-spacing;
+    }
+}
+
+.x-carousel-indicator-horizontal {
+    height: $carousel-track-size;
+}
+
+.x-carousel-indicator-vertical {
+    width: $carousel-track-size;
+}
+
+@include sencha-carousel-indicator-ui('light', $indicator-light, 'flat', $indicator-light-active, 'flat');
+@include sencha-carousel-indicator-ui('dark', $indicator-dark, 'flat', $indicator-dark-active, 'flat');
+</pre>
+</body>
+</html>

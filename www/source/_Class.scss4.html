@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Global_CSS'>/**
+</span> * @class Global_CSS
+ */
+
+<span id='Global_CSS-css_mixin-toolbar-button'>/**
+</span> * Includes the default styles for toolbar buttons, mostly used as a helper function.
+ *
+ * @param {color} $bg-color Base color to be used for the button.
+ * @param {color} $type Gradient style for the button, will automatically use &quot;recessed&quot; when pressed.
+ */
+@mixin toolbar-button($bg-color, $type: $button-gradient) {
+    &amp;,
+    .x-toolbar &amp; {
+        border: 1px solid darken($bg-color, 20%);
+        border-top-color: darken($bg-color, 15%);
+        background-color: $bg-color;
+        @include color-by-background($bg-color);
+
+        &amp;.x-button-back:before,
+        &amp;.x-button-forward:before {
+            background: darken($bg-color, 20%);
+        }
+
+        &amp;,
+        &amp;.x-button-back:after,
+        &amp;.x-button-forward:after {
+            @include background-gradient($bg-color, $type);
+        }
+
+        &amp;.x-button-pressing, &amp;.x-button-pressed, &amp;.x-button-active {
+            &amp;, &amp;:after {
+                @include background-gradient(darken($bg-color, 3%), 'recessed');
+            }
+        }
+    }
+}
+
+<span id='Global_CSS-css_mixin-bevel-text'>/**
+</span> * Adds a small text shadow (or highlight) to give the impression of beveled text.
+ *
+ * @param {string} $type Either shadow or highlight, decides whether to apply a light shadow or dark.
+ */
+@mixin bevel-text($type: 'shadow') {
+    @if $include-highlights {
+        @if $type == shadow {
+            text-shadow: rgba(0,0,0,.5) 0 -.08em 0;
+        } @else {
+            text-shadow: rgba(255,255,255,.25) 0 .08em 0;
+        }
+    }
+}
+
+<span id='Global_CSS-css_mixin-bevel-box'>/**
+</span> * Adds a small box shadow (or highlight) to give the impression of being beveled.
+ *
+ * @param {string} $type Either shadow or highlight, decides whether to apply a light shadow or dark.
+ */
+@mixin bevel-box($type: 'light') {
+    @if $include-highlights {
+        @if $type == shadow {
+            @include st-box-shadow(rgba(#000, .5) 0 -.06em 0);
+        } @else {
+            @include st-box-shadow(rgba(#fff, .35) 0 .06em 0);
+        }
+    }
+}
+
+<span id='Global_CSS-css_mixin-bevel-by-background'>/**
+</span> * Bevels the text based on its background.
+ *
+ * @param {color} $bg-color Background color of element.
+ *
+ * See {@link #bevel-text}.
+ */
+@mixin bevel-by-background($bg-color) {
+    @if (lightness($bg-color) &gt; 50) {
+        @include bevel-text(light);
+    } @else {
+        @include bevel-text;
+    }
+}
+
+<span id='Global_CSS-css_mixin-mask-by-background'>/**
+</span> * Creates a background gradient for masked elements, based on the lightness of their background.
+ *
+ * @param {color} $bg-color Background color of element.
+ * @param {percent} $percent Contrast of the new gradient to its background.
+ * @param {percent} $style Gradient style of the gradient.
+ *
+ * See background-gradient mixin.
+ */
+@mixin mask-by-background($bg-color, $contrast: 100%, $style: $base-gradient) {
+    @if (lightness($bg-color) &gt; 50) {
+        @include background-gradient(darken($bg-color, $contrast), $style);
+    } @else {
+        @include background-gradient(lighten($bg-color, $contrast), $style);
+    }
+}
+</pre>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-form-Panel'>/**
+</span> * @class Ext.form.Panel
+ */
+
+.x-form {
+    .x-scroll-container {
+        background-color: $form-bg-color;
+    }
+}
+
+// Label
+@mixin label {
+    text-shadow: #fff 0 1px 1px;
+    color: $form-dark;
+}
+
+.x-form-label {
+    @include label();
+    @include bevel-text('light');
+    padding: $form-spacing;
+    background-color: $form-label-background-color;
+
+    span {
+        font-size: .8em;
+    }
+}
+</pre>
+</body>
+</html>

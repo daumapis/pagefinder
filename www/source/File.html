@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-field-File'>/**
+</span> * @private
+ */
+Ext.define('Ext.field.File', {
+    extend: 'Ext.field.Input',
+    xtype : 'file',
+
+    cachedConfig: {
+<span id='Ext-field-File-cfg-type'>        type: 'file'
+</span>    },
+
+<span id='Ext-field-File-method-getTemplate'>    // @private
+</span>    getTemplate: function() {
+        var items = [
+            {
+                reference: 'input',
+                tag: this.tag,
+                type: 'file'
+            }
+        ];
+
+        items.push({
+            reference: 'mask',
+            classList: [this.config.maskCls]
+        });
+
+        return items;
+    },
+
+<span id='Ext-field-File-method-updateType'>    updateType: function(newType, oldType) {
+</span>        var prefix = Ext.baseCSSPrefix + 'input-';
+        this.input.replaceCls(prefix + oldType, prefix + newType);
+    }
+});
+</pre>
+</body>
+</html>
