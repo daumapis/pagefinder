@@ -1,0 +1,147 @@
+!SESSION 2013-05-31 18:06:35.569 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_29
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.mylyn.tasks.ui 2 0 2013-05-31 18:06:51.102
+!MESSAGE No search provider was registed. Tasks search is not available.
+
+!ENTRY org.eclipse.jface 2 0 2013-05-31 18:06:53.605
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-31 18:06:53.605
+!MESSAGE A conflict occurred for CTRL+SHIFT+U:
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(com.aptana.ide.syncing.ui.commands.upload,Upload...,
+		,
+		Category(com.aptana.ide.syncing.ui.commands.category,File Transfer,File Transfer Commands,true),
+		com.aptana.ide.syncing.ui.handlers.UploadHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.occurrences.in.file.quickMenu,Show Occurrences in File Quick Menu,
+		Shows the Occurrences in File quick menu,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.core.jobs 4 2 2013-05-31 18:06:55.300
+!MESSAGE An internal error occurred during: "Sending Ping...".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/equinox/internal/provisional/p2/engine/IProfileRegistry
+	at com.aptana.ide.update.internal.manager.P2PluginManager.getInstalledPlugins(P2PluginManager.java:481)
+	at com.aptana.ide.update.FeatureUtil.getInstalledFeatures(FeatureUtil.java:30)
+	at com.aptana.ide.core.ui.ping.PingStartup.addFeatureList(PingStartup.java:99)
+	at com.aptana.ide.core.ui.ping.PingStartup.updateAnonymousId(PingStartup.java:391)
+	at com.aptana.ide.core.ui.ping.PingStartup.access$0(PingStartup.java:367)
+	at com.aptana.ide.core.ui.ping.PingStartup$1.run(PingStartup.java:446)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.equinox.internal.provisional.p2.engine.IProfileRegistry
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:513)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 7 more
+
+!ENTRY org.eclipse.ui.workbench 4 2 2013-05-31 18:06:57.290
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/equinox/internal/provisional/p2/engine/IProfileRegistry
+	at com.aptana.ide.update.internal.manager.P2PluginManager.getInstalledPlugins(P2PluginManager.java:481)
+	at com.aptana.ide.update.FeatureUtil.getInstalledFeatures(FeatureUtil.java:30)
+	at com.aptana.ide.intro.IntroStartup.installFeatures(IntroStartup.java:150)
+	at com.aptana.ide.intro.IntroStartup.startup(IntroStartup.java:63)
+	at com.aptana.ide.core.ui.BaseTimingStartup.earlyStartup(BaseTimingStartup.java:58)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$63.run(Workbench.java:2470)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 4 2013-05-31 18:06:57.291
+!MESSAGE Unhandled Exception
+
+!ENTRY com.aptana.ide.intro 4 0 2013-05-31 18:06:57.291
+!MESSAGE Unable to execute early startup code for an extension
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/equinox/internal/provisional/p2/engine/IProfileRegistry
+	at com.aptana.ide.update.internal.manager.P2PluginManager.getInstalledPlugins(P2PluginManager.java:481)
+	at com.aptana.ide.update.FeatureUtil.getInstalledFeatures(FeatureUtil.java:30)
+	at com.aptana.ide.intro.IntroStartup.installFeatures(IntroStartup.java:150)
+	at com.aptana.ide.intro.IntroStartup.startup(IntroStartup.java:63)
+	at com.aptana.ide.core.ui.BaseTimingStartup.earlyStartup(BaseTimingStartup.java:58)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$63.run(Workbench.java:2470)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui.workbench 4 2 2013-05-31 18:06:57.343
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/equinox/internal/p2/console/ProvisioningHelper
+	at com.aptana.ide.update.internal.manager.P2PluginManager.getAllMetadataRepositories(P2PluginManager.java:559)
+	at com.aptana.ide.update.AddRepositoryStartup.earlyStartup(AddRepositoryStartup.java:35)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$63.run(Workbench.java:2470)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.equinox.internal.p2.console.ProvisioningHelper
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:513)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 7 more
+
+!ENTRY org.eclipse.ui 4 4 2013-05-31 18:06:57.344
+!MESSAGE Unhandled Exception
+
+!ENTRY com.aptana.ide.update.eclipse35 4 0 2013-05-31 18:06:57.344
+!MESSAGE Unable to execute early startup code for an extension
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/equinox/internal/p2/console/ProvisioningHelper
+	at com.aptana.ide.update.internal.manager.P2PluginManager.getAllMetadataRepositories(P2PluginManager.java:559)
+	at com.aptana.ide.update.AddRepositoryStartup.earlyStartup(AddRepositoryStartup.java:35)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$63.run(Workbench.java:2470)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.equinox.internal.p2.console.ProvisioningHelper
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:513)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 7 more
+
+!ENTRY org.eclipse.core.jobs 4 2 2013-05-31 18:07:00.821
+!MESSAGE An internal error occurred during: "Publishing comet message".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/equinox/internal/provisional/p2/engine/IProfileRegistry
+	at com.aptana.ide.update.internal.manager.P2PluginManager.getInstalledPlugins(P2PluginManager.java:481)
+	at com.aptana.ide.update.FeatureUtil.getInstalledFeatures(FeatureUtil.java:30)
+	at com.aptana.ide.intro.FeatureChangeManager.<init>(FeatureChangeManager.java:48)
+	at com.aptana.ide.intro.FeatureChangeManager.getManager(FeatureChangeManager.java:82)
+	at com.aptana.ide.intro.actions.FeatureChangesClient.getResponse(FeatureChangesClient.java:107)
+	at com.aptana.ide.server.jetty.comet.CometClient$1.run(CometClient.java:157)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2013-05-31 18:07:00.980
+!MESSAGE An internal error occurred during: "Publishing comet message".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/equinox/internal/provisional/p2/engine/IProfileRegistry
+	at com.aptana.ide.update.internal.manager.P2PluginManager.getInstalledPlugins(P2PluginManager.java:481)
+	at com.aptana.ide.update.portal.clients.ListPluginsClient.getResponse(ListPluginsClient.java:77)
+	at com.aptana.ide.server.jetty.comet.CometClient$1.run(CometClient.java:157)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 4 2013-05-31 18:11:39.152
+!MESSAGE Invalid preference page path: XML Syntax
