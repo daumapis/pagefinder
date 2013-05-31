@@ -53,11 +53,10 @@ var appendBook = function(data, isSearch){
 					tmpHtml += " active";
 					activeCheck = true;
 				}
-				tmpHtml += "\">";
-				tmpHtml += "<a href=\"#\" onclick=\"detailList()\">"
+				tmpHtml += "\" style=\"text-align: center!important;\">";
 				tmpHtml += "<img src=\""
 				tmpHtml += item[i].cover_l_url.length === 0 ? "/img/empty_book.png" : item[i].cover_l_url;
-				tmpHtml += "\"></a>"
+				tmpHtml += "\"onclick=\"detailList()\" style=\"display: inline\">"
 				tmpHtml += "</div>";
 				console.log(tmpHtml)
 
