@@ -44,6 +44,7 @@ app.get('/users', user.list);
 app.get('/oauth', routes.oauth);
 app.get('/oauth_callback', routes.oauth_callback);
 app.get('/clear', routes.clear);
+app.get('/save', routes.save);
 app.get('/editor', editor.form);
 app.get('/detail', bookdetail.view);
 
