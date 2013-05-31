@@ -16,16 +16,19 @@ exports.notelist = function(req, res){
     var keyword = "pagefinder";
  
     notestore.listNotebooks(token, function(notebooks){
-    	// console.log(notebooks);
+    	console.log(notebooks);
     	var chkVal = false;
     	for(var i=0;i<notebooks.length;i++){
-    		if(notebook[i].name.match(keyword)){
+    		if(notebooks[i].name.match(keyword)){
     			chkVal = true;
     			temp = notebooks[i];
+    			console.log("test1111")
+    			
     		}
     	}
+    	console.log("111")
     	if (!chkVal) {
-
+    		console.log("222")
     		var notebook = new Evernote.Notebook();
     		notebook.name = keyword;
 				notestore.createNotebook(notebook, function(createdNotebook) {
@@ -33,7 +36,13 @@ exports.notelist = function(req, res){
   					res.render('note', { note : notebook.name});
 				});
     	}else{
-    		res.render('note', { note : temp.name});
+    		var notebook = new Evernote.Notebook();
+			notestore.getNote(token, temp.guid, true, true, true, true, function(note)
+			{
+				console.log(note);
+				res.render('booklist', note);
+			})
+    		
     	};
       req.session.notebooks = notebooks;
 
@@ -48,28 +57,3 @@ exports.notelist = function(req, res){
     res.render('index');
   }
 };
-
-
-
-// var filter = new NoteFilter();
-// filter.setOrder(1);
-// var list = [];
-// list[0] = record.guid;
-// filter.setTags(list);
-// enyo.application.NoteStore.findNotes(onSuccess3,this.showAlertMessage.bind(this, "Failed to get Notelist"), filter,
-// 		  0, 5);
-// NoteFile.js: (setTags method)
-// ...
-// NoteFilter.prototype.setTags = function(tags) {
-// if(tags === 'null'){
-//   this.tagGuids = null;
-// }
-// else{
-//   var list = [];
-//   console.log("tags.length: "+tags.length);
-//   for (var i = 0; i < tags.length; i++) {
-//     list[i] = tags[i];
-//   }
-//   this.tagGuids = list;
-// }
-// };
