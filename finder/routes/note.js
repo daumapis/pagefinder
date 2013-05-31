@@ -4,5 +4,5 @@ var callbackUrl = "http://localhost:3000/oauth_callback";
 
 
 exports.note = function(req, res){
-	
-}
+	res.render('note');
+};
