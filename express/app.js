@@ -19,6 +19,12 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser('secret'));
+  app.use(express.session());
+  app.use(function(req, res, next) {
+    res.locals.session = req.session;
+    next();
+  });
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -28,6 +34,7 @@ app.configure('development', function(){
 });
 
 // Routes
+app.get('/', routes.index);
 app.get('/oauth', routes.oauth);
 app.get('/oauth_callback', routes.oauth_callback);
 app.get('/clear', routes.clear);

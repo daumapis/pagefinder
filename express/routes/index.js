@@ -27,8 +27,8 @@ exports.oauth = function(req, res) {
     }
     else { 
       // store the tokens in the session
-      req.session.oauthToken = oauthToken;
-      req.session.oauthTokenSecret = oauthTokenSecret;
+      //req.session.oauthToken = oauthToken;
+      //req.session.oauthTokenSecret = oauthTokenSecret;
 
       // redirect the user to authorize the token
       res.redirect(client.getAuthorizeUrl(oauthToken));
