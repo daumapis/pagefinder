@@ -94,25 +94,29 @@ var nextList = function(){
 	}
 }
 
-$("#id_addBook").submit(function(){
+var sendEvernote = function(){
 	var active = $("#myCarousel").find('.item.active');
 	active.parent().children()
 	var items = active.parent().children()
-	var index = items.index(active)
+	var index = items.index(active)	
 
 	var data = ObjectGlobal.isData[index]
 
 	var urlPath = "/addbook"
+	console.log(data)
+	// console.log(data.title, data.author, data.list_price, data.isbn, data.cover_l_url)
 	$.ajax({
 		url: urlPath,
 		type : "POST",
 		data : {title : data.title, author : data.author, price : data.list_price, isbn : data.isbn, imgUrl : data.cover_l_url}
 	}).done(function( data ) {
 		console.log("Success")
+	}).fail(function(){
+		console.log("aaaa")
 	});
 
 	return false;
-})
+}
 
 var detailList = function(){
 	var active = $("#myCarousel").find('.item.active');
@@ -130,7 +134,7 @@ var detailList = function(){
 	$("#id_bookInfo").append("<h3>" + "ISBN : " + data.isbn + "</h3>");
 	$("#id_bookInfo").append("<h3>" + "가격 : " + data.list_price + "</h3>");
 	$("#id_bookInfo").append("<img src=\"" + data.cover_l_url + "\" />");
-	$("#id_bookInfo").append('<button type="submit" class="btn" id="id_addBook">Evernote</button>');
+	$("#id_bookInfo").append('<button type="submit" class="btn" onclick="sendEvernote()">Evernote</button>');
 	$("#id_bookInfo").append('<button type="cancel" class="btn" onclick="backList()">뒤로가기</button>');
 
 	// $("#id_bookInfo").append("<h3>" + "제목 : " + data.title + "</h1>");
