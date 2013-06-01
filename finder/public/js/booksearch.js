@@ -8,6 +8,25 @@ ObjectGlobal.isResultDownload = false
 ObjectGlobal.isData = []
 
 
+function submitF(){
+
+	$.ajax({
+		url: "http://localhost:3000/imgsave?url=http://book.daum-img.net/R110x160/BOK00019695251BA",
+		type : "GET"
+	}).done(function( data ) {
+		
+
+		top.location.href='http://localhost:3000/save?title=test&isbn=8917218342&page=10&writer=ets&monney=16000&body=test';
+
+
+	});
+
+
+		
+	alert("에버노트에 저장되었습니다.")
+
+}
+
 var tmp;
 
 var daumSearch = function(title, pageno, callback, isSearch){
@@ -110,7 +129,10 @@ var sendEvernote = function(){
 		type : "POST",
 		data : {title : data.title, author : data.author, price : data.list_price, isbn : data.isbn, imgUrl : data.cover_l_url}
 	}).done(function( data ) {
-		console.log("Success")
+		console.log("Success");
+		console.log(data);
+		window.aaa = data;
+		$("#id_bookInfo").append(data);
 	}).fail(function(){
 		console.log("aaaa")
 	});

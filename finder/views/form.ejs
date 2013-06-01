@@ -7,7 +7,7 @@
 </style>
  <div class="row-fluid ">
 	<div class="span2" style="text-align: center;" >
-	   <p><img src="<%=img%>" class="img-polaroid"></p>
+	   <p><img src="<%=img%>" id="imgurl" class="img-polaroid"></p>
 	</div>
 	
 	<div class="span10 hidden-phone">
@@ -23,7 +23,7 @@
 
 
 <p style="text-align:right;margin-right: 1em;">
-<button type="button" style="width:4em" class="btn btn-primary">Save</button>
+<button type="button" style="width:4em" class="btn btn-primary" onclick="submitF()">Save</button>
 </p>
 
 <p style="text-align:right;margin-right: 1em;">
@@ -31,4 +31,9 @@
 <%=temp.getFullYear()%>.<%=temp.getMonth()+1%>.<%=temp.getDate()%> / <%if(temp.getHours()<10){%>0<%}%><%=temp.getHours()%>:<%if(temp.getMinutes()<10){%>0<%}%><%=temp.getMinutes()%>
 </p>
 
+
+<script>
+
+
+</script>
 
